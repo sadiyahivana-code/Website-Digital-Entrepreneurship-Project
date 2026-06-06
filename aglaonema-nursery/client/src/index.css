@@ -1,0 +1,111 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    font-family: 'Inter', system-ui, sans-serif;
+    background-color: #F8F4EE;
+    color: #2D1B00;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Playfair Display', Georgia, serif;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-forest-800 text-cream-200 px-6 py-3 font-body font-medium tracking-wide
+           hover:bg-forest-700 active:bg-forest-900 transition-all duration-200
+           rounded-sm inline-flex items-center gap-2 text-sm;
+  }
+
+  .btn-secondary {
+    @apply border border-forest-800 text-forest-800 px-6 py-3 font-body font-medium tracking-wide
+           hover:bg-forest-800 hover:text-cream-200 transition-all duration-200
+           rounded-sm inline-flex items-center gap-2 text-sm;
+  }
+
+  .btn-gold {
+    @apply bg-gold-400 text-bark-950 px-6 py-3 font-body font-semibold tracking-wide
+           hover:bg-gold-500 transition-all duration-200
+           rounded-sm inline-flex items-center gap-2 text-sm;
+  }
+
+  .section-title {
+    @apply font-display text-3xl md:text-4xl text-forest-800 leading-tight;
+  }
+
+  .card {
+    @apply bg-white border border-cream-300 rounded-sm overflow-hidden;
+  }
+
+  .input-field {
+    @apply w-full border border-cream-300 rounded-sm px-4 py-3 text-sm font-body
+           focus:outline-none focus:border-forest-600 focus:ring-1 focus:ring-forest-200
+           bg-white placeholder-cream-600 transition-colors;
+  }
+
+  .badge-new {
+    @apply bg-gold-400 text-bark-950 text-xs font-semibold px-2 py-0.5 rounded-sm;
+  }
+
+  .badge-hot {
+    @apply bg-red-600 text-white text-xs font-semibold px-2 py-0.5 rounded-sm;
+  }
+
+  .badge-out {
+    @apply bg-gray-400 text-white text-xs font-semibold px-2 py-0.5 rounded-sm;
+  }
+}
+
+/* Leaflet override */
+.leaflet-container {
+  font-family: 'Inter', sans-serif;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #F8F4EE;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #C9B26B;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #1B4332;
+}
+
+/* Range slider */
+input[type='range'] {
+  -webkit-appearance: none;
+  height: 4px;
+  background: #C9B26B;
+  border-radius: 2px;
+}
+
+input[type='range']::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 16px;
+  height: 16px;
+  background: #1B4332;
+  border-radius: 50%;
+  cursor: pointer;
+}
